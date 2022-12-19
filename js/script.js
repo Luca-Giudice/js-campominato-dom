@@ -37,7 +37,11 @@
 const grid = document.getElementById('grid');
 const playButton = document.getElementById('play-button');
 
-
+function bomb(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) +min);
+}
 function play() {
 
   // # Funzioni interne al gioco
@@ -48,6 +52,7 @@ function play() {
 
     return cell;
   }
+  
 
   // Cambiamo il testo del bottone in "Ricomincia"
   playButton.innerText = 'Ricomincia';
@@ -67,6 +72,7 @@ function play() {
     cell.addEventListener('click', function () {
       cell.classList.add('clicked');
       console.log(i);
+
     })
 
     grid.appendChild(cell);
@@ -78,4 +84,5 @@ function play() {
 
 
 
-playButton.addEventListener('click', play);
+playButton.addEventListener('click', play, bomb);
+console.log(bomb);

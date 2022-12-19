@@ -92,3 +92,9 @@ main {
   color: white;
   background-color: dodgerblue;
 }
+
+
+
+#grid .cell.bomb {
+  background-color: red;
+}
