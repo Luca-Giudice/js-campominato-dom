@@ -69,7 +69,7 @@ function play() {
 
     const cell = createCell(i);
 
-    cell.addEventListener('click', function () {
+    cell.addEventListener('click', function ()  {
       cell.classList.add('clicked');
       console.log(i);
 
@@ -84,5 +84,7 @@ function play() {
 
 
 
-playButton.addEventListener('click', play, bomb);
+playButton.addEventListener('click', play) {
+  const result = bomb();
+};
 console.log(bomb);
